@@ -1,0 +1,45 @@
+# Experimentation repository - Weather Intelligence (AT2, Machine Learning as a Service)
+# This repo contains notebooks, models, reports and configuration. The reusable code lives in
+# the custom package `amla-package-26016360` (>= 0.2.0), published on TestPyPI.
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weather-intelligence-experiments"
+version = "1.0.0"
+description = "Experimentation repository: Climate Comfort Index (regression) and Weather Hazard Category (classification) forecasting for Sydney with Open-Meteo data."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "TAHREEMA RAHMAN ZARIYAT" }]
+dependencies = [
+  # NOTE: the custom package "amla-package-26016360>=0.2.0" is NOT on PyPI; install it separately:
+  #   pip install --no-deps --index-url https://test.pypi.org/simple/ "amla-package-26016360>=0.2.0"
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<4",
+  "scikit-learn>=1.5,<2",
+  "xgboost>=2.1,<4",
+  "requests>=2.31,<3",
+]
+
+[project.optional-dependencies]
+# Everything needed to run the experimentation notebooks.
+notebooks = [
+  "jupyterlab>=4.0",
+  "ipykernel>=6.29",
+  "nbformat>=5.10",
+  "matplotlib>=3.8",
+  "seaborn>=0.13",
+  "pyarrow>=15",
+  "utstd",
+  "python-docx>=1.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/tahreemarz/weather-intelligence-experiments"
+Package = "https://test.pypi.org/project/amla-package-26016360/"
+
+# This repository is not itself a package: `pip install -e .` only installs the dependencies above.
+[tool.setuptools]
+packages = []

@@ -1,0 +1,23 @@
+# data and large artefacts are reproducible from the notebooks
+data/raw/*
+!data/raw/.gitkeep
+data/interim/*
+!data/interim/.gitkeep
+data/processed/**/*.csv
+# keep the frozen feature lists
+!data/processed/**/features_list.json
+
+# notebooks: keep outputs out of git history if you prefer -> use `jupyter nbconvert --clear-output`
+.ipynb_checkpoints/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
+.env
+.DS_Store

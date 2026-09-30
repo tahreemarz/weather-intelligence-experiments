@@ -124,7 +124,7 @@ checks, performance reporting) in AT1. Version 0.2.0 extends it for this project
 the `weather` subpackage, `split_by_date`, `multiclass_scores` and tolerance-aware
 `regression_scores`. Source, tests and the publishing workflow (`python -m build`,
 `twine upload --repository testpypi`) are in the package repository:
-<https://github.com/tahreemarz/36120-26SP-group2-26016360-package>.
+<https://github.com/tahreemarz/36120-26SP-26016360-package>.
 
 Any change to shared logic (formulas, features, cleaning) must be made in the package,
 version-bumped and published to TestPyPI, then pinned here **and** in the API repository.

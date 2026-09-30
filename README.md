@@ -17,6 +17,8 @@ engineering, model helpers, artefact bundles) lives in my custom Python package
 [API repository](https://github.com/tahreemarz/weather-intelligence-api). The notebooks
 and the FastAPI service therefore compute targets and features with the *same* code.
 
+Live API: <https://weather-intelligence-api-6f18.onrender.com>
+
 ## Repository structure (Cookiecutter Data Science layout)
 
 ```
@@ -36,7 +38,8 @@ and the FastAPI service therefore compute targets and features with the *same* c
 │   ├── comfort_climate       <- CCI experiment (template.ipynb structure)
 │   └── weather_hazard        <- WHC experiment (template.ipynb structure)
 ├── reports
-│   └── figures               <- every figure produced by the notebooks (png)
+│   ├── figures               <- every figure produced by the notebooks (png)
+│   └── 36120-26SP-AT2-26016360-report.docx
 ├── references                <- assignment brief, APA guide, links
 └── src
     └── check_environment.py  <- sanity check: package version, utstd, Open-Meteo reachability
@@ -106,22 +109,13 @@ After running both notebooks, copy the bundles into the API repository:
 cp -r models/comfort_climate models/weather_hazard ../weather-intelligence-api/models/
 ```
 
+
 ## Final report
 
-`reports/build_report.py` fills the unit's report template (`reports/report_template.docx`)
-with the results of the two notebooks: the cover page details and repository links, and
-every section's text, tables and figures, all taken from `models/*/metadata.json` and
-`reports/figures/`. Sentences that depend on the results (improvement over baselines,
-hypothesis outcome, top features, business counts) are generated from the metadata.
-
-```bash
-python reports/build_report.py      # after running both notebooks -> reports/AT2_report.docx
-```
-
-Before running it, set your GitHub username, repository links and the Render URL at the
-top of the script. Open the result in Word and answer "Yes" to updating fields so the
-table of contents shows the right page numbers; then read the generated text once. The
-script prints the body word count (limit 4,000).
+The final report (`reports/36120-26SP-AT2-26016360-report.docx`) covers data sourcing,
+target creation, feature engineering, experimental design, modelling, evaluation,
+business recommendations, ethics, deployment architecture and limitations. All figures
+it uses are in `reports/figures/`.
 
 ## The custom package
 
